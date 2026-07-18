@@ -1,0 +1,10 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        seen = dict.fromkeys(nums,0)   # to store values from nums in dict with value 0
+        for i, num in enumerate(nums):  # get index and value
+            if num in seen:
+                seen[num] += 1    # increase value for each occurance
+            else:
+                seen[num] = i
+        return max(seen, key=seen.get)    # get the key that has max value
+          
