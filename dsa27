@@ -1,0 +1,10 @@
+class Solution(object):
+    def maxProfit(self, prices):
+        #min_price = float('inf') # this takes a infinity value that initialize var with safe value 
+        min_price = prices[0] # this is the alternative to initialize value with 1st index
+        max_profit = 0
+        for num in prices:
+            min_price = min(num, min_price)
+            max_profit = max(max_profit, num-min_price)
+        return max_profit
+        
