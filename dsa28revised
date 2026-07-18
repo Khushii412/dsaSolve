@@ -1,0 +1,7 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        seen = dict.fromkeys(nums,0)
+        for num in nums:
+            seen[num] += 1
+        return max(seen, key=seen.get)
+        # here if else is removed entirely, cause every element is in seen , so we just increase the value based on occurance
