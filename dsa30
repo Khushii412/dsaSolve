@@ -1,0 +1,5 @@
+class Solution(object):
+    def isAnagram(self, s, t):
+        S = sorted(s)
+        T = sorted(t)
+        return S == T  # sorted(str) is used to sort a string
