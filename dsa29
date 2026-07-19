@@ -1,0 +1,16 @@
+class Solution(object):
+    def isPalindrome(self, s):
+        lower = s.lower()
+        #print(lower)
+        valid=[]   # this is array to store char
+        for ch in lower:
+            if ch.isalnum():
+                valid.append(ch)
+        clean = "".join(valid)   # this joins the charachter into a string 
+        print(clean)
+        
+        reverse = clean[::-1]
+        if reverse == clean:
+            return True
+        else:
+            return False
