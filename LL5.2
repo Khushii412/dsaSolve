@@ -1,0 +1,20 @@
+         self.next = next
+class Solution(object):
+    def isPalindrome(self, head):
+        li = []
+        temp = head
+        while temp:
+            li.append(temp.val)
+            temp = temp.next
+        j = len(li)-1
+        i = 0
+        while i<j:
+            if li[i] == li[j]:
+                i += 1
+                j -= 1
+            else:
+                return False
+        return True
+
+        
+        
