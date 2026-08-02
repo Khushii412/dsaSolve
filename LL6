@@ -1,0 +1,17 @@
+class Solution(object):
+    def removeNthFromEnd(self, head, n):
+        dummy = ListNode(0)
+        dummy.next = head
+        slow = dummy
+        fast = dummy
+        # moves fast n steps ahead first
+        for i in range(n):
+                fast = fast.next
+        # keep movinf fast and slow one step
+        while fast and fast.next:
+            slow = slow.next 
+            fast = fast.next
+        # when reached move the ptr ahead to delete   
+        slow.next = slow.next.next
+        return dummy.next
+        
