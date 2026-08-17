@@ -1,0 +1,26 @@
+         self.next = next
+class Solution(object):
+    def reorderList(self, head):
+        if head == None or head.next == None:
+            return head
+        slow = head
+        fast = head
+        while fast and fast.next:
+            slow= slow.next
+            fast = fast.next.next
+        prev = None
+        cur = slow.next
+        slow.next = None
+        while cur:
+            nxt = cur.next
+            cur.next = prev
+            prev = cur
+            cur = nxt
+        frst, second = head, prev
+        while second:
+            temp1, temp2 = frst.next, second.next
+            frst.next = second
+            second.next = temp1
+            frst , second = temp1, temp2
+        return head
+
